@@ -1,0 +1,7 @@
+<button class="back" *ngIf="!ocultacion" (click)="onClick()"> Buscar de nuevo</button>
+<div *ngIf=ocultacion>
+    <app-caratulas-playlist  (propagar)="procesaPropagar($event)" (miArraytracks)="arrayItems($event)" (idPlay)="idPlay($event)"></app-caratulas-playlist>
+</div> 
+<div *ngIf=!ocultacion>
+    <app-list-track-play-list [items]="arrayTracks" [botonAdd]=false [botonDelete]=true  [idPlaylist]="idPlaylist"></app-list-track-play-list>
+</div>

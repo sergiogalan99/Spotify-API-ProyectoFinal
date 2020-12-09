@@ -1,0 +1,86 @@
+<div class="login-wrap">
+    <div class="login-html">
+        <div style="text-align: center;margin-bottom: 3em;">
+            <img class="mb-4" src="assets/imgs/spotify.png" alt="" width="220" height="60">
+        </div>
+        <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Login</label>
+        <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+        <div class="login-form">
+            <div class="sign-in-htm">
+                <form [formGroup]="reactiveForm">
+                    <div class="group">
+                        <label for="inputEmail" class="label">Email</label>
+                        <input type="text" id="email" class="input" placeholder="email" formControlName="email">
+                        <small class="form-text text-muted" style="color:rgb(188, 205, 207); text-align:center"
+                        *ngIf="reactiveForm.controls.email.status==='INVALID' && reactiveForm.controls.email.touched">
+                        <p style="color: rgb(188, 205, 207);">Campo obligatorio</p>
+                    </small>
+                    </div>
+                    <div class="group">
+                        <label for="inputPassword" class="label">Password</label>
+                        <input type="password" id="password" class="input" placeholder="password"
+                            formControlName="password">
+                            <small class="form-text text-muted" style="color:rgb(188, 205, 207); text-align:center"
+                            *ngIf="reactiveForm.controls.password.status==='INVALID' && reactiveForm.controls.password.touched">
+                            <p style="color: rgb(188, 205, 207);">Campo obligatorio</p>
+                        </small>
+                    </div>
+
+                    <div class="group">
+                        <button class="button" (click)="loginUser()" type="button">Login</button>
+                    </div>
+                    <div class="hr"></div>
+                    <div style="text-align: center;">
+
+                      
+                            <div *ngIf="salidaError" class="alert alert-danger" role="alert">
+                                {{error}}
+                              </div>
+                            
+                      
+                    </div>
+                </form>
+                <p style="text-align: center;" class="mt-5 mb-3 text-muted">&copy; 2020-2021 Sergio Galán</p>
+            </div>
+            <div class="sign-up-htm">
+                <form [formGroup]="reactiveFormDos">
+                    <div class="group">
+                        <label for="inputUsernameDos" class="label">Username</label>
+                        <input type="text" id="usernameDos" class="input" placeholder="username" formControlName="usernameDos">
+                        <small class="form-text text-muted" style="color:rgb(188, 205, 207); text-align:center"
+                        *ngIf="reactiveFormDos.controls.usernameDos.status==='INVALID' && reactiveFormDos.controls.usernameDos.touched">
+                        <p style="color: rgb(188, 205, 207);">Campo obligatorio</p>
+                    </small>
+                    </div>
+                <div class="group">
+                    <label for="inputEmailDos" class="label">Email</label>
+                    <input type="text" id="emailDos" class="input" placeholder="email" formControlName="emailDos">
+                    <small class="form-text text-muted" style="color:rgb(188, 205, 207); text-align:center"
+                    *ngIf="reactiveFormDos.controls.emailDos.status==='INVALID' && reactiveFormDos.controls.emailDos.touched">
+                    <p style="color: rgb(188, 205, 207);">Campo obligatorio</p>
+                </small>
+                </div>
+                <div class="group">
+                    <label for="inputPasswordDos" class="label">Password</label>
+                    <input type="password" id="passwordDos" class="input" placeholder="password"
+                        formControlName="passwordDos">
+                        <small class="form-text text-muted" style="color:rgb(188, 205, 207); text-align:center"
+                        *ngIf="reactiveFormDos.controls.passwordDos.status==='INVALID' && reactiveFormDos.controls.passwordDos.touched">
+                        <p style="color: rgb(188, 205, 207);">Campo obligatorio</p>
+                    </small>
+                </div>
+                <div class="group">
+                    <input type="submit" (click)="registUser()" class="button" value="Sign Up">
+                </div>
+                <div class="hr"></div>
+                <div style="text-align: center;">
+                    <div *ngIf="salidaErrorDos" class="alert alert-danger" role="alert">
+                        {{errorDos}}
+                      </div>
+            </div>
+            </form>
+                <p style="text-align: center;" class="mt-5 mb-3 text-muted">&copy; 2020-2021 Sergio Galán</p>
+            </div>
+        </div>
+    </div>
+</div>

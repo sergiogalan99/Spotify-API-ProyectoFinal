@@ -1,0 +1,75 @@
+ <div class="navigation-wrap start-header estiloNavbar">
+     <div class="container">
+         <div class="row">
+             <div class="col-12">
+                 <nav class="navbar navbar-expand-md navbar-dark">
+                     <a (click)="refresh()">
+                         <img src="../../../../assets/imgs/spotifyBlack.png" style=" margin-left: 2em;width: 18%;height: 40px;" alt="">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto py-4 py-md-0" >
+                            
+                            <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4" *ngIf="!error" style="margin-top: 6px;">
+                                <a class="nav-link" [routerLink]="['music']">Música</a>
+                            </li>
+                            <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4"  *ngIf="!error" style="margin-top: 6px;">
+                                <a class="nav-link"  [routerLink]="['mis-playlist']">Playlist</a>
+                            </li>
+                            
+                            <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                <a class="nav-link" (click)="openModalProfile()" style="background-color: transparent;
+                                width: 10em;
+                                text-align: center;">
+                            
+                            <img   style="width: 20%;height: 20%;  border-radius: 50%;"
+                            [src]="urlImage || 'https://firebasestorage.googleapis.com/v0/b/finalproyectodegrado-3c689.appspot.com/o/fotoPersona.png?alt=media&token=3b465913-4612-4398-b0bf-8f95b24aa8ae'">  
+                            {{userProfile.username}}   
+                            </a>
+                            </li> 
+                            <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                <a class="nav-link" (click)="logout()"><svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-person-x" fill="red" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M8 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10zm1.146-7.85a.5.5 0 0 1 .708 0L14 6.293l1.146-1.147a.5.5 0 0 1 .708.708L14.707 7l1.147 1.146a.5.5 0 0 1-.708.708L14 7.707l-1.146 1.147a.5.5 0 0 1-.708-.708L13.293 7l-1.147-1.146a.5.5 0 0 1 0-.708z"/>
+                                  </svg></a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+
+<body class="app" style="text-align: center">
+<main>
+    <div class="absolute-center" style="padding-top: 5em;">
+
+            <div *ngIf="error" class="alert alert-danger animated fadeIn" class="divToken">
+                <h3><strong>ERROR: </strong>  {{ mensajeError }}</h3>
+                <div class="input-group mb-3" >
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1" style="padding-left: 3em;padding-right: 3em;"  >Bearer</span>
+                    </div>
+                    <input type="text" [(ngModel)]="model" class="form-control" style="padding-left: 1em;padding-right: 1em;" placeholder="BQCB9slVgMmWDxn9i..." aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                <button type="button" style="padding:0.8em;" (click)="getToken()" class="btn btn-secondary btn-lg btn-block">Leer</button>
+            </div>
+            <router-outlet>
+        
+            </router-outlet>
+        
+        
+        </div>
+    </main>
+    <footer *ngIf="!error">
+        <iframe [src]="userService.uriActiva  | domseguro" width="100%" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+       
+    </footer>
+  </body>

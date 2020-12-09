@@ -1,0 +1,16 @@
+    <main class="page-content" >
+      <div class="card" style="background-image: url({{item.images[0].url}})" *ngFor="let item of items">
+          <div class="content">
+            <h2 class="title">{{ item.name }}</h2>
+            <br><br><br><br>
+            <div style="width: auto; text-align: center;">
+              <button style="width: auto; text-align: center;" mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
+                <mat-icon>favorite</mat-icon> {{item.followers.total}}
+              </button>
+            </div>
+            <button class="btn" (click)="verDetalles()" [routerLink]="['detalle-album-artista', item.id]" (click)="ocultarContenedor()">Ver detalle</button>
+          </div>
+        </div>
+    </main>
+
+

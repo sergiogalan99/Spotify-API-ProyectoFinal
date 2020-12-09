@@ -1,0 +1,41 @@
+<!-- <br>
+<div class="container-padre" >
+    <button type="button" class="btn btn-info" (click)="mostrar()" *ngIf="!ocultacion" ><mat-icon>keyboard_backspace</mat-icon></button>
+
+    <div class="row" *ngIf="ocultacion">
+        <div class="col-sm-6">
+          <div class="card playing" style="height: 30em;">
+            <div class="card-body" [routerLink]="['artist']"  (click)="ocultar()">
+              
+                <div style="color: white;text-align: center;">
+                  <p class="tituloCard">ARTISTS</p>
+                  </div>
+              
+              <div class='wave'></div>
+              <div class='wave'></div>
+              <div class='wave'></div>
+              <div class='wave'></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card2 playing" style="height: 30em;">
+            <div class="card-body"  [routerLink]="['track']"  (click)="ocultar()" >
+              <div style="color: white;text-align: center;">
+                <p  class="tituloCard">TRACKS</p>
+                
+              </div>
+              <div class='wave'></div>
+              <div class='wave'></div>
+              <div class='wave'></div>
+              <div class='wave'></div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div> -->
+
+
+<router-outlet></router-outlet>
+
+

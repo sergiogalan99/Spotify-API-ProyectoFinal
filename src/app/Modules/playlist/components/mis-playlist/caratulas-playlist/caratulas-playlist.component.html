@@ -1,0 +1,29 @@
+<div class="container-padre" >
+    <button class="button-add" (click)="openModal()">Nueva PlayList</button>
+</div>
+
+
+<div class="flip flip-vertical" style="height: 355px; width: 355px"  *ngFor="let item of arrayOut" >
+    <div class="front" style="background-image: url(../../../../../assets/imgs/playlistsLogo.jpg); height: 355px;">
+        <h1 style="color: black; font-size: 1em;">{{item.nombre}}</h1>
+    </div>
+    
+    <div class="back" style="display: flex; height: 100%; width: 100%; align-items: center; justify-content: center;" >
+        <div class="col" style="margin-top: 0em;">
+            <div class="row-1" style="text-align: left;">
+                    <button mat-mini-fab color="warn" (click)="deletePlayListUser(item.id)" aria-label="Example icon button with a plus one icon">
+                      <mat-icon style="color: white;">delete_forever</mat-icon>
+                    </button>
+            </div>
+                <div >
+                    <h1 style="color: sandybrown;">{{item.nombre}}</h1>
+                    <button mat-raised-button color="primary" class="botonVerTrack" (click)="viewTrackPlayList(item.id)" >Ver tracks</button>
+                    <h3 style="text-align: center; margin-top: 5px; color: rgb(210, 230, 231);">{{item.tracks.length}} tracks</h3>
+                    <p>{{item.description}}</p>
+                </div>
+        </div>
+    </div>
+</div>
+
+
+

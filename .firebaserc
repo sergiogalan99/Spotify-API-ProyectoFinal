@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "finalproyectodegrado-3c689": {
+      "hosting": {
+        "miProyectoAngular": [
+          "finalproyectodegrado-3c689"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "finalproyectodegrado-3c689"
+  }
+}

@@ -1,0 +1,59 @@
+<div class="card card" *ngFor="let item of items">
+
+  <div class="container">
+    <span class="back-text">
+      {{ item.name }}
+    </span>
+    <br>
+    <div class="container">
+
+      <div class="row">
+        <div class="col" style="margin-top: 2%">
+          <div class="duaration">
+            {{item.duration_ms | noImage}}
+          </div>
+        </div>
+
+
+        <div class="w-100"></div>
+        <div class="col-hoverDisco" >
+          <div class="disco">
+            <div class="disco--cover" style="background-image: url({{item.album.images[0].url}})"></div>
+            <div class="disco--vinilo"
+              style=" background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/953/vinilo.png) no-repeat center center;">
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="row">
+
+        <div class="col">
+                  <div class="row">  
+         <div class="example-button-container">
+                  <button mat-mini-fab color="accent" (click)="openModalProfile(item.id)"
+                  aria-label="Example icon button with a plus one icon">
+                  <mat-icon>playlist_add</mat-icon>
+                </button>
+              </div>
+                  </div>
+                  <div class="row" style="margin-top: 2%;">  
+                    <button mat-flat-button color="warn" (click)="playMusic(item.uri)">Play</button>
+        
+                  </div>
+                </div>
+      
+     
+    </div>
+    <div class="row" style="margin-top: 0%; font-size: 1vmax">
+      <div class="w-100"></div>
+      <div class="col" style="margin-top: 42%;">
+        <div *ngFor="let a of item.artists">
+          <strong style="color: white;">{{a.name}}</strong>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: 100%;
+    background-image: url('assets/imgs/grid.png'), url('assets/imgs/fondoSpotifyNuevo.png');
+    background-repeat: repeat, repeat;
+    background-size: cover, cover;
+    /* background-image: url("assets/imgs/fondoSpotifyNuevo.png"); */
+    /* background-size: cover; */
+    overflow: auto;
+    overflow-x: hidden;
+    font-family: "Open Sans", Helvetica, Arial, 
+  }

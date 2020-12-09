@@ -1,0 +1,21 @@
+<div *ngIf="!trackBoolean">
+    <h1 style="color: white;">PlayLists</h1>
+
+    <div class="flip flip-vertical" style="height: 355px; width: 355px"  *ngFor="let item of arrayPlayListCategoria" >
+        <div class="front" style="background-image: url({{item.images[0].url}}); height: 355px;">
+        </div>
+        <div class="back" style="display: flex; height: 100%; width: 100%; align-items: center; justify-content: center;" >
+            <div >
+                <h1 style="color: sandybrown;">{{item.name}}</h1>
+                <button mat-raised-button color="primary" class="botonVerTrack" (click)="viewTrackPlayList(item.id)" >Ver tracks</button>
+                <h3 style="text-align: center; margin-top: 5px; color: rgb(210, 230, 231);">{{item.tracks.total}} tracks</h3>
+                <p>{{item.description}}</p>
+            </div>
+           
+        </div>
+    </div>
+</div> 
+
+<app-list-track-play-list  *ngIf="trackBoolean" [items]="itemsArray" [botonAdd]=true [botonDelete]=false></app-list-track-play-list>
+
+

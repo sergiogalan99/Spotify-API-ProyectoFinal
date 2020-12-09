@@ -1,0 +1,22 @@
+<mat-form-field appearance="fill" class="form-field">
+    <mat-label style="color: rgb(96, 129, 70); font-size: 1.5em; margin-top: 1em;">Buscar por</mat-label>
+    <mat-select [(value)]="seleccionada">
+      <mat-option value="artist">ARTISTA</mat-option>
+      <mat-option value="track">CANCIÓN</mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+
+  <div class="row" *ngIf="seleccionada.length>0" style="margin-bottom: 10px; margin-top: 10px;" >
+    <div class="col-sm"  style="text-align: center;" >
+      <div class="row"  style="text-align: center;" >
+        <div class="col"  style="text-align: center;">
+          <input #termino type="search"  (keyup)="buscarTermino(termino.value)" class="form-control"
+            placeholder="Buscar...">
+        </div>
+      </div>
+        <app-tarjetas *ngIf="seleccionada=='artist'" [items]="arrayBusqueda"></app-tarjetas>
+        <app-tracks-searched *ngIf="seleccionada=='track'" [items]="arrayBusqueda"></app-tracks-searched>
+    </div>
+  </div>
+

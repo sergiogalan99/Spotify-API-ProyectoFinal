@@ -1,0 +1,8 @@
+<h1 style="color:rgb(255, 255, 255)">Categorias</h1>
+<br>
+<div class="flip flip-vertical" style="height: 355px; width: 355px;" *ngFor="let item of arrayCategorias" [routerLink]="['playlist-categoria', item.id]">
+    <button class="front" style="background-image: url({{item.icons[0].url}}); height: 100%;">
+        <h1 class="text-shadow" style="text-align: center;margin-top: 45%">{{item.name}}</h1>
+    </button>
+</div>
+

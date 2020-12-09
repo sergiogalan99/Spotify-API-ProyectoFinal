@@ -1,0 +1,150 @@
+user-profile {
+    margin-top: 90px;
+    color: white;
+  }
+  
+  .user-profile img {
+    height: 15em;
+    width: 15em;
+    border-radius: 50%;
+    float: left;
+    color: white;
+    margin-right: 24px;
+  }
+
+  
+  
+  .user-details p {
+    font-size: 20px;
+    color: white;
+  }
+  
+  .user-details {
+    float: left;
+    color: rgb(119, 21, 21);
+    margin-top: 15px;
+    margin-top: inherit;
+    vertical-align: bottom;
+  }
+  
+  .user-details h4 {
+    font-size: 20px;
+  }
+  .user-details h1 {
+    font-size: 30px;
+    color: black;
+  }
+  
+
+  html {
+    height: 100%;
+    /* background-color: black; */
+  }
+  
+  main {
+    justify-content: center;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-top: 0px;
+    padding-bottom: 40px;
+    /* background-color: black; */
+  }
+
+  .btn {
+    display: inline-block;
+    font: inherit;
+    background: none;
+    border: none;
+    color: black;
+    padding: 0;
+    cursor: pointer;
+}
+.tituloEditDatos{
+    text-align: center;
+    font-size: 35px;
+    font-family: cursive;
+    margin-top: 5px;
+    font-style: oblique;
+}
+
+.botonOk{
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    width: 60%;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 6px;
+    border: 2px solid #0016b0;
+  }
+  .botonOk:hover{
+    color: #1883ba;
+    background-color: #ffffff;
+  }
+
+.botonEditarDatos{
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    width: 60%;
+    color: #ffffff;
+    background-color: #31444e;
+    border-radius: 6px;
+    border: 2px solid #000000;
+  }
+  .botonEditarDatos:hover{
+    color: #4a4f52;
+    background-color: #ffffff;
+  }
+
+  .botonCancel{
+    text-decoration: none;
+    padding: 10px;
+    width: 60%;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #ba1818;
+    border-radius: 6px;
+    border: 2px solid #f01f1f;
+  }
+  .botonCancel:hover{
+    color: #c92525;
+    background-color: #ffffff;
+  }
+  .botonEditFoto{
+    text-decoration: none;
+    padding: 6px;
+    font-weight: 400;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #0b9216;
+    border-radius: 6px;
+    border: 2px solid #60c205;
+    width: 35%;
+    margin-bottom: 8px;
+  }
+  .botonEditFoto:hover{
+    color: #217508;
+    background-color: #ffffff;
+  }
+
+
+.btn:focus {
+    outline: 0.5rem auto #4d90fe;
+}
+
+.profile-edit-btn {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    border: 0.1rem solid #dbdbdb;
+    border-radius: 0.3rem;
+    color: #dbdbdb;
+    padding: 0 2.4rem;
+    margin-left: 2rem;
+}
+

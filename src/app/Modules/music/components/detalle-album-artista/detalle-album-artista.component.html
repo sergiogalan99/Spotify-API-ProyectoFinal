@@ -1,0 +1,108 @@
+<div style="width: 100%;">
+	<button class="back" (click)="onClick()"> Buscar de nuevo</button>
+	<section class="content" style="background-color: black;justify-content: center;margin-left: 10%;margin-right: 10%; width: 80%;">
+		<div class="content__middle">
+		<div class="artist" style="background-image: url({{artista.images[0].url}})">
+			<div class="artist__header">
+				<div class="artist__info">
+					<div class="profile__img">
+						
+						<img [src]="artista.images.length>0 ? artista.images[0].url : ''">
+					</div>
+					<div class="artist__info__meta">
+						<div class="artist__info__type">Artist</div>
+						<div class="artist__info__name">{{artista.name}}</div>
+					</div>
+				</div>
+				
+				<div class="artist__listeners">
+					<div class="artist__listeners__count">{{artista.followers.total}}</div>
+					<div class="artist__listeners__label">Followers</div>
+				</div>
+				
+				<div class="artist__navigation">
+					<ul class="nav nav-tabs" role="tablist">
+						<li role="presentation" class="active">
+							<a href="#artist-overview" aria-controls="artist-overview" role="tab"
+							data-toggle="tab">Overview</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="artist__content" style="background-color: black;">
+				<div class="tab-content">
+					<!-- Overview -->
+					<div role="tabpanel" class="tab-pane active" id="artist-overview">
+						<div class="overview">
+							<div class="overview__artist">
+								<div class="tracks">
+								</div>
+							</div>
+							<div class="overview__albums">
+								<div class="album">
+									<div class="album__info">
+										<div class="album__info__art">
+										</div>
+										<div class="album__info__meta">
+											<div class="album__year">2020</div>
+											<div class="album__name">Top Tracks</div>
+										</div>
+									</div>
+									
+									<div class="album__tracks">
+										<div class="tracks">
+											<div class="tracks__heading">
+												<!-- <div class="tracks__heading__title">#</div> -->
+												<div class="tracks__heading__number">#</div>
+												<div class="tracks__heading__title">Song</div>
+												<div class="tracks__heading__length">
+													<i class="ion-ios-stopwatch-outline"></i>
+												</div>
+												<div class="tracks__heading__popularity">
+													<i class="ion-thumbsup"></i>
+												</div>
+											</div>
+											
+											
+											<div class="row" *ngFor="let item of topTracks; index as i" >
+												<div class="col-1">
+														<button  mat-mini-fab color="accent" (click)="openModalProfile(item.id)" style="padding: 0em;" aria-label="Example icon button with a plus one icon">
+														  <mat-icon>playlist_add</mat-icon>
+														</button>
+												</div>
+												<div class="col">
+
+													<div class="track" (click)="viewTrack(item.uri)" >												
+														<!-- <iframe [src]="item.uri | domseguro" class="iframeMusic"
+															allowtransparency="true" allow="encrypted-media"></iframe> -->
+															<div class="track__number">{{i+1}}</div>
+															<div class="track__added">
+																<i class="ion-checkmark-round added"></i>
+															</div>
+															<div class="track__title featured">
+																<span class="title">{{item.name}}</span>
+															</div>
+															
+															<div class="track__explicit" >
+																<span class="label" *ngIf="item.explicit">Explicit</span>
+															</div>
+															<div class="track__length">{{item.duration_ms | noImage}}</div>
+															
+		
+														</div>
+												</div>
+											</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	</div>
+	
