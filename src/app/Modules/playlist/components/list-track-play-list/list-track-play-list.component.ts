@@ -18,12 +18,15 @@ export class ListTrackPlayListComponent implements OnInit {
   @Input() botonDelete: boolean;
   @Input() idPlaylist: string;
   miPlaylist = {} as PlayList;
+  nombrePlaylist: string;
   constructor(private usersService: UsersService,
     private spotifyService: SpotifyService,
      private dialog: MatDialog, private notificationService:NotificationService) { }
 
   ngOnInit(): void {
-  
+    this.usersService.getTracksPlaylistsUser(this.idPlaylist).subscribe(res => {
+      this.nombrePlaylist = res.data().nombre;
+    });
   }
 
   playMusic(uri: string) {

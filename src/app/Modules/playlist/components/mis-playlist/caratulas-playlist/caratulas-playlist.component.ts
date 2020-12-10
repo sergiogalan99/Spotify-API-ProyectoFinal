@@ -27,6 +27,7 @@ export class CaratulasPlaylistComponent implements OnInit {
   ngOnInit(): void {
     this.getPlaylist();
 
+
   }
 
   getPlaylist() {
@@ -44,7 +45,7 @@ export class CaratulasPlaylistComponent implements OnInit {
 
     const dialogRef = this.dialog.open(ModalAddPlaylistUserComponent, {
       width: '800px',
-      height: '350px',
+      height: '400px',
     });
     dialogRef.afterClosed().subscribe(result => {
       this.getPlaylist();
@@ -52,13 +53,13 @@ export class CaratulasPlaylistComponent implements OnInit {
   }
 
   deletePlayListUser(idPlayList: string) {
-    this.usersService.getIdUserActivo().then(id=>{
+    this.usersService.getIdUserActivo().then(id => {
       this.usersService.getProfileUser(id.uid).subscribe(res => {
         let miUser = this.eliminarId(res.data(), idPlayList);
         this.usersService.deletePlayListUser(idPlayList, miUser, id.uid);
         this.notificationService.itemDeletePlaylist();
       });
-    })
+    });
   }
 
   eliminarId(miUser: User, idPlayList: string): User {

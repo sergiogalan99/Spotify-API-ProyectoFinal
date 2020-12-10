@@ -35,8 +35,10 @@ export class MiPrincipalHomeComponent implements OnInit {
   }
 
   cambiarCancion() {
-    this.userService.getProfileUser(this.userService.idUsuario).subscribe((a) => {
-      this.userService.uriActiva = a.data().uri;
+    this.userService.getIdUserActivo().then(id=>{
+      this.userService.getProfileUser(id.uid).subscribe((a) => {
+        this.userService.uriActiva = a.data().uri;
+      });
     });
   }
 

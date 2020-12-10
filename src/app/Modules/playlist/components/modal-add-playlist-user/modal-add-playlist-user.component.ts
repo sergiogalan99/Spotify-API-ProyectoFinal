@@ -29,7 +29,7 @@ export class ModalAddPlaylistUserComponent implements OnInit {
 
   onUpload(e) {
     this.image = e.target.files[0];
-    
+
     this.notificationService.itemimagenCargada();
   }
   initForm = () => {
@@ -44,13 +44,13 @@ export class ModalAddPlaylistUserComponent implements OnInit {
 
 
   emitEditForm = () => {
-    
+
     this.miPlayList.nombre = this.reactiveForm.value.nombre;
     this.miPlayList.description = this.reactiveForm.value.description;
-    this.miPlayList.tracks=[];
+    this.miPlayList.tracks = [];
     this.usersService.getIdUserActivo().then(id => {
-      this.usersService.getProfileUser( id.uid).subscribe(res => {
-         this.idList = this.usersService.addPlayList(this.miPlayList, res.data(), id.uid);
+      this.usersService.getProfileUser(id.uid).subscribe(res => {
+        this.idList = this.usersService.addPlayList(this.miPlayList, res.data(), id.uid);
         // this.viewDatos = false;
         this.dialogRef.close();
       });

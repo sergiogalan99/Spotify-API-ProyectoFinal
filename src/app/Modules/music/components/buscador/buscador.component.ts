@@ -29,5 +29,4 @@ export class BuscadorComponent implements OnInit {
       this.arrayBusqueda = [];
     }
   }
- 
 }

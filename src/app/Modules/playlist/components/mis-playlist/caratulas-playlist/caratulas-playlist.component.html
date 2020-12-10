@@ -1,11 +1,15 @@
+
+<main>
+    <h1 style="color: white;">Mis PlayLists</h1>
+  </main>
 <div class="container-padre" >
     <button class="button-add" (click)="openModal()">Nueva PlayList</button>
 </div>
-
-
 <div class="flip flip-vertical" style="height: 355px; width: 355px"  *ngFor="let item of arrayOut" >
     <div class="front" style="background-image: url(../../../../../assets/imgs/playlistsLogo.jpg); height: 355px;">
-        <h1 style="color: black; font-size: 1em;">{{item.nombre}}</h1>
+        <p class="tituloCard" style="font-size: 1.2em; color: black;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">{{item.nombre}}</p>
+        <br>
+        <p class="cardNum" style="color: red;">{{item.tracks.length}} tracks</p>
     </div>
     
     <div class="back" style="display: flex; height: 100%; width: 100%; align-items: center; justify-content: center;" >
@@ -27,3 +31,34 @@
 
 
 
+<!-- 
+<div class="container-padre" >
+
+    <div class="row" >
+        <div class="col " *ngFor="let item of arrayOut" (click)="viewTrackPlayList(item.id)"  >
+            <div style="background-color: b12856;">
+                <button mat-mini-fab color="warn" (click)="deletePlayListUser(item.id)" aria-label="Example icon button with a plus one icon">
+                  <mat-icon style="color: white;">delete_forever</mat-icon>
+                </button>
+  
+            </div>
+            <div class="card playing estilosCardHover" style="height: 30em;">
+            <div class="card-body">
+                
+                <div style="color: white;text-align: center;">
+                    <p class="tituloCard">{{item.nombre}}</p>
+                  </div>
+                  <h4 style="text-align: center; margin-top: 5px; color: rgb(210, 230, 231);">{{item.tracks.length}} tracks</h4>
+                  
+                  <div class='wave'></div>
+                  <div class='wave'></div>
+                  <div class='wave'></div>
+                  <div class='wave'></div>
+                  <h4 style="text-align: center; margin-top: 5px; color: rgb(210, 230, 231);">{{item.description}}</h4>
+            </div>
+          </div>
+        
+        </div>
+     
+      </div>
+</div>  -->

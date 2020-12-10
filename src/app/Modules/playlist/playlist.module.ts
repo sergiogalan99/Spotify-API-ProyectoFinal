@@ -15,7 +15,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { PlaylistHomeComponent } from './playlist-home/playlist-home.component';
 import { CategoriasComponent } from './components/categorias/categorias.component';
-
+import {MatRadioModule} from '@angular/material/radio';
 import { PlaylistCategoriaComponent } from './components/playlist-categoria/playlist-categoria.component';
 import { MatSelectModule } from '@angular/material/select';
 import { ListTrackPlayListComponent } from './components/list-track-play-list/list-track-play-list.component';
@@ -48,7 +48,8 @@ import { CaratulasPlaylistComponent } from './components/mis-playlist/caratulas-
     ReactiveFormsModule,
     MatCardModule,
     MatIconModule,
-    MatSelectModule
+    MatSelectModule,
+    MatRadioModule
 
 
   ], providers: [PlaylistService]

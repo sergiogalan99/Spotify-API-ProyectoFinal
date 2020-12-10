@@ -64,9 +64,8 @@ user-profile {
 .tituloEditDatos{
     text-align: center;
     font-size: 35px;
-    font-family: cursive;
     margin-top: 5px;
-    font-style: oblique;
+    font-family: math;
 }
 
 .botonOk{

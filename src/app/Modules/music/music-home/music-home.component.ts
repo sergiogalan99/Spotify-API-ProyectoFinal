@@ -5,15 +5,7 @@ import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
   templateUrl: './music-home.component.html',
   styleUrls: ['./music-home.component.css']
 })
-export class MusicHomeComponent implements OnInit {
+export class MusicHomeComponent {
 
-  // respuestArtista=true;
-  seleccionada = '';
-  ngOnInit(): void {
-   
-  }
 
-  // toucherAuxPrincipal=(event:any)=>{
-  //   this.respuestArtista=event;
-  // }
 }

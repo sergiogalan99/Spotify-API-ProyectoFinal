@@ -42,7 +42,7 @@ export class AddTrackPlaylistUserComponent implements OnInit {
 
     const dialogRef = this.dialog.open(ModalAddPlaylistUserComponent, {
       width: '800px',
-      height: '350px',
+      height: '400px',
     });
     dialogRef.afterClosed().subscribe(result => {
       this.getPlaylist();
