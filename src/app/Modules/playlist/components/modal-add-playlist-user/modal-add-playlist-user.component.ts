@@ -51,7 +51,6 @@ export class ModalAddPlaylistUserComponent implements OnInit {
     this.usersService.getIdUserActivo().then(id => {
       this.usersService.getProfileUser(id.uid).subscribe(res => {
         this.idList = this.usersService.addPlayList(this.miPlayList, res.data(), id.uid);
-        // this.viewDatos = false;
         this.dialogRef.close();
       });
     });

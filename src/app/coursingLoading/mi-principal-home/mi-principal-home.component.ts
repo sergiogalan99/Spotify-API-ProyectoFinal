@@ -32,6 +32,14 @@ export class MiPrincipalHomeComponent implements OnInit {
     this.checkDatosPersonales();
     this.cambiarCancion();
     this.getImagenProfile();
+    this.countPlayListUser();
+  }
+  countPlayListUser(){
+    this.userService.getIdUserActivo().then(id=>{
+      this.userService.getProfileUser(id.uid).subscribe(res=>{
+      this.userService.totalPlaylist = res.data().playlists.length;
+      });
+    });
   }
 
   cambiarCancion() {

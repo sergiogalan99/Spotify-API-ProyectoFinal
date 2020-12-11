@@ -69,7 +69,7 @@ export class SpotifyService {
   }
 
   getBusqueda(termino: string, tipo: string) {
-    return this.getQuery(`search?q=${termino}&type=${tipo}&limit=15`).pipe(
+    return this.getQuery(`search?q=${termino}&type=${tipo}&limit=20`).pipe(
       map(data => data[tipo + "s"].items)
     );
   }

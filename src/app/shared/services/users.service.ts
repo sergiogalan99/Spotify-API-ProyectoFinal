@@ -15,6 +15,7 @@ export class UsersService {
   uriActiva = '';
   idUsuario = '';
   image = '';
+  totalPlaylist = 0;
 
   constructor(private afs: AngularFirestore,
     private storage: AngularFireStorage,
@@ -79,6 +80,7 @@ export class UsersService {
     this.afs.collection('playlists').doc(id).set(playList);
     miUser.playlists.push(id);
     this.afs.collection('users').doc(idUser).set(miUser, { merge: true });
+    this.totalPlaylist++;
     return id;
   }
   addTrackPlayList(idPlayList: string, item: PlayList, idTrack: string) {
@@ -86,7 +88,7 @@ export class UsersService {
     this.afs.collection('playlists').doc(idPlayList).set(item, { merge: true });
   }
 
-  setImagenProfile(file: File,  idUser: string) {
+  setImagenProfile(file: File, idUser: string) {
     const fileRef = this.storage.ref(`profiles/${idUser}`);
     return fileRef.put(file).then(async function (snapshot) {
       return await snapshot.ref.getDownloadURL();
@@ -113,6 +115,7 @@ export class UsersService {
   deletePlayListUser(idPlayList: string, miUser: User, idUser: string) {
     this.afs.collection('playlists').doc(idPlayList).delete();
     this.afs.collection('users').doc(idUser).set(miUser, { merge: true });
+    this.totalPlaylist--;
   }
   deleteTrackPlayListUser(idPlayList: string, miPlaylist: PlayList) {
     this.afs.collection('playlists').doc(idPlayList).set(miPlaylist, { merge: true });

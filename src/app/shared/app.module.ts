@@ -23,6 +23,7 @@ import { DomseguroPipe } from './pipes/domseguro.pipe';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import {MatSelectModule} from '@angular/material/select';
+import {MatBadgeModule} from '@angular/material/badge';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +51,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatDividerModule,
     MatListModule,
     MatSnackBarModule,
-    MatSelectModule
+    MatSelectModule,
+    MatBadgeModule
   ],
   providers: [UsersService, NotificationService],
   bootstrap: [AppComponent]

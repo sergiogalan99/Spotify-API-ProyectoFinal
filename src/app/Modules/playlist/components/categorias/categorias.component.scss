@@ -20,6 +20,9 @@
   .flip {
       position: relative;
   }
+  .flip:hover{
+filter: sepia();
+  }
   
 
   .flip {
